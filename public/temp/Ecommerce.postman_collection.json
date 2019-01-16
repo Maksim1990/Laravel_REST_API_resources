@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "1cb729e7-25b9-4d8f-a8cb-75da1c747c38",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/41",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products?name=Test&description=Test description&price=120&stock=300&discount=20",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test"
+								},
+								{
+									"key": "description",
+									"value": "Test description"
+								},
+								{
+									"key": "price",
+									"value": "120"
+								},
+								{
+									"key": "stock",
+									"value": "300"
+								},
+								{
+									"key": "discount",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product (And linked reviews)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/41",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/1?name=Test name&description=Test desctiption&price=500&stock=360&discount=20",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test name"
+								},
+								{
+									"key": "description",
+									"value": "Test desctiption"
+								},
+								{
+									"key": "price",
+									"value": "500"
+								},
+								{
+									"key": "stock",
+									"value": "360"
+								},
+								{
+									"key": "discount",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OAuth Token",
+			"item": [
+				{
+					"name": "OAuth Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"grant_type\":\"password\",\n\t\"client_id\":\"2\",\n\t\"client_secret\":\"EnH5ebxckLTZjOknTLK42sznxicNECumiXrfHJPZ\",\n\t\"username\":\"sebastian95@example.org\",\n\t\"password\":\"secret\"\n}"
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/oauth/token",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Review Item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/41/reviews/43",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"41",
+								"reviews",
+								"43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reviews ALL Per User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/41/reviews",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"41",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/41/reviews/233",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"41",
+								"reviews",
+								"233"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/1/reviews/224?text=Test review&customer=Test customer",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"1",
+								"reviews",
+								"224"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Test review"
+								},
+								{
+									"key": "customer",
+									"value": "Test customer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://laraapiproductrest.local/api/products/1/reviews?customer=Test customer&text=This example review&star=1",
+							"protocol": "http",
+							"host": [
+								"laraapiproductrest",
+								"local"
+							],
+							"path": [
+								"api",
+								"products",
+								"1",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "customer",
+									"value": "Test customer"
+								},
+								{
+									"key": "text",
+									"value": "This example review"
+								},
+								{
+									"key": "star",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
