@@ -34,10 +34,10 @@ php artisan passport:install
 php artisan server
 ```
 11) Go to 'Postman' or similar app and use this API
-(For convenience you can import already generated Postman API routes collection Postman API routes collection:
+(For convenience you can import already generated Postman API routes collection Postman API routes collection)
 ```
 public/temp/Ecommerce.postman_collection.json
 ```
-)
+
 
 ### That's all!
