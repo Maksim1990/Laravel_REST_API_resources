@@ -95,7 +95,7 @@ class ProductController extends Controller
         $product->update($request->all());
         return response([
             'data' => new ProductResource($product)
-        ],Response::HTTP_CREATED);
+        ],Response::HTTP_OK);
     }
 
     /**
@@ -108,7 +108,7 @@ class ProductController extends Controller
     {
         $this->ProductUserCheck($product);
         $product->delete();
-        return response(null,Response::HTTP_NO_CONTENT);
+        return response(['data'=>"Product with id ".$product->id." was successfully deleted"],Response::HTTP_OK);
     }
 
     public function ProductUserCheck($product)

@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\Review;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\Resource;
 
-class ReviewCollection extends ResourceCollection
+class ReviewCollection extends Resource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,13 @@ class ReviewCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'customer' => $this->customer,
+            'text' => $this->review,
+            'star' => $this->star,
+            'href' => [
+                'link' => route('reviews.show',[$this->product_id,$this->id])
+            ]
+        ];
     }
 }

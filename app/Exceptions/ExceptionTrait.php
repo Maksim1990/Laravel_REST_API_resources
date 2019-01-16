@@ -7,6 +7,7 @@ trait ExceptionTrait
 {
     public function apiException($request,$e)
     {
+
         if ($this->isModel($e)) {
             return $this->ModelResponse($e);
         }
@@ -25,8 +26,14 @@ trait ExceptionTrait
     }
     protected function ModelResponse($e)
     {
+        $errMessage="";
+        if($e->getModel()==="App\Model\Review"){
+            $errMessage="Review";
+        }else if($e->getModel()==="App\Model\Product"){
+            $errMessage="Product";
+        }
         return response()->json([
-            'errors' => 'Product Model not found'
+            'errors' => $errMessage.' not found'
         ],Response::HTTP_NOT_FOUND);
     }
     protected function HttpResponse($e)
